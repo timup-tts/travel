@@ -1,0 +1,22 @@
+<h1>Welcome to my Travel Site</h1>
+<p>This is going to be the best one yet!!!</p>
+
+When using Erb properly, my homeland is: <%= @homeland %><br />
+
+<ul>
+  <% @countries.each do |country| %>
+    <li><%= country %></li>
+  <% end %>
+</ul>
+
+<div class="row">
+  <% @travel_pics.each do |pic| %>
+    <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-body">
+         <%= image_tag pic, class: "img-responsive" %>
+       </div>
+      </div>
+    </div>
+  <% end %>
+</div>

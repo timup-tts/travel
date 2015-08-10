@@ -1,0 +1,24 @@
+<style>
+  body {
+    background-color: <%= @color %>;
+    color: <%= @fontcolor %>;
+  }
+
+  #char-btn {
+    background-color: lime;
+  }
+</style>
+
+<h1>About me</h1>
+<p>Lots of interesting stuffs.</p>
+
+<p>My favorite color is <strong><%= @color %></strong></p>
+
+<% if @size <= 12 %>
+  <p>My shoe size is <%= @size %>.</p>
+<% else %>
+  <p>I have huge feet!</p>
+<% end %>
+
+<%= link_to "Blue", {controller: "welcome", action: "about", color: "blue"}, class: "btn btn-primary" %>
+<%= link_to "Chartreuse", {controller: "welcome", action: "about", color: "chartreuse"}, class: "btn btn-default", id: "char-btn" %>
