@@ -7,6 +7,7 @@
   <% end %>
 </ul>
 
+
   <div class="row">
     <% @destinations.each do |destination| %>
       <div class="col-md-4">
@@ -14,6 +15,10 @@
         <div class="panel-body">
          <h2><%= destination.city %></h2>
          <h3><%= destination.country %></h3>
+         <% if destination.avatar_file_name != nil %>
+            <%= image_tag destination.avatar.url(:medium), class: "img-responsive" %>
+         <% end %>
+         <p>Population: <%= destination.population %></p>
          <p><%= destination.description %></p>
 
          <div class="btn-group">
